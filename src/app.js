@@ -66,6 +66,7 @@ app.get('/weather', (req, res) => {
     }
 
     console.log(addressToPass)
+    // comment added
 
     // geocode(addressToPass, (error, data) => { // for data directly without parsed
 
