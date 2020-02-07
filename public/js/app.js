@@ -10,7 +10,8 @@ console.log('Client side javascript file is loaded')
 
 function fetchWeather(location, callback) {
 
-    fetch('http://localhost:3000/weather?address=' + location)
+    // fetch('http://localhost:3000/weather?address=' + location) // for local only
+    fetch('/weather?address=' + location)
         .then((response) => {
             response.json().then((data) => {
                 if (data.error) {

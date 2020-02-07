@@ -1,0 +1,18 @@
+ls -a -l ~/.ssh
+ssh-keygen -t rsa -b 4096 -C "sumit.acharya2011@gmail.com"
+
+ls -a -l ~/.ssh
+
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_rsa
+
+cat ~/.ssh/id_rsa.pub  (for generating ssh key)
+
+ssh -T git@github.com
+
+
+// heroku setup
+
+heroku keys:add
+
+
