@@ -15,4 +15,10 @@ ssh -T git@github.com
 
 heroku keys:add
 
+heroku login
 
+heroku create sumit-weather-app
+
+git remote (to check created remote for heroku to push)
+
+git push heroku master (for pushing code from git to heroku for deployment to production)
