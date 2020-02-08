@@ -83,7 +83,7 @@ app.get('/weather', (req, res) => {
         // const {
         //     latitude, longitude, locationName} = data
     
-        forecast(latitude, longitude, (error, foreCastdata) => {
+        forecast(latitude, longitude, (error, body) => {
             console.log('Error', error)
     
             if (error) {
@@ -92,11 +92,13 @@ app.get('/weather', (req, res) => {
     
         
             // console.log(foreCastdata.daily.data[0].summary + ' Its currently ' + (foreCastdata.currently.temperature) + ' degrees outside. There is ' + foreCastdata.currently.precipProbability + ' % of chance to rain')
+            console.log(body.daily.data[0])    
 
             res.send({
                 location: locationName,
-                foreCastdata:foreCastdata.daily.data[0].summary + ' Its currently ' + (foreCastdata.currently.temperature) + ' degrees outside. There is ' + foreCastdata.currently.precipProbability + ' % of chance to rain'
-                +' and wind speed would be '+(foreCastdata.currently.windSpeed),
+                foreCastdata:body.daily.data[0].summary + ' Its currently ' + (body.currently.temperature) + ' degrees outside. There is ' + body.currently.precipProbability + ' % of chance to rain'
+                +'. Wind speed would be '+(body.currently.windSpeed)+'. Temperature high today is '+(body.daily.data[0].temperatureHigh)
+                +' and the low temperature would be '+(body.daily.data[0].temperatureLow),
                 
                 address:addressToPass
             })
