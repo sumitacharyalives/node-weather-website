@@ -95,7 +95,8 @@ app.get('/weather', (req, res) => {
 
             res.send({
                 location: locationName,
-                foreCastdata:foreCastdata.daily.data[0].summary + ' Its currently ' + (foreCastdata.currently.temperature) + ' degrees outside. There is ' + foreCastdata.currently.precipProbability + ' % of chance to rain',
+                foreCastdata:foreCastdata.daily.data[0].summary + ' Its currently ' + (foreCastdata.currently.temperature) + ' degrees outside. There is ' + foreCastdata.currently.precipProbability + ' % of chance to rain'
+                +' and wind speed would be '+(foreCastdata.currently.windSpeed),
                 
                 address:addressToPass
             })
